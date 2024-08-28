@@ -22,7 +22,7 @@ def visualize_configuration(screen, observer, point):
     # Plot the line connecting the vertex (Point D) with the arbitrary point
     ax.plot([observer[0], point[0]],
             [observer[1], point[1]],
-            [observer[2], point[2]], color='black', linestyle='-.', linewidth=1)
+            [observer[2], point[2]], color='black', marker='x', linestyle='-.', linewidth=1)
 
 
     # Set the labels
