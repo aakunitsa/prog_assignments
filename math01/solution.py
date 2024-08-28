@@ -1,5 +1,7 @@
 import numpy as np
 from geom import Plane3D
+from utils import visualize_configuration
+
 
 observer = np.zeros(3)
 screen = np.array([[1, 0, 0],
@@ -9,7 +11,7 @@ screen = np.array([[1, 0, 0],
 #                   [0, 1, 0],
 #                   [3, 2, 0]], dtype=float)
 #test_point = np.array([-1, -1, -1], dtype=float)
-test_point = np.array([10, 10, 10], dtype=float)
+test_point = np.array([5, 5, 5], dtype=float)
 
 # Check if the screen is a valid triangle
 gram_matrix = np.dot(screen, screen.T)
@@ -54,3 +56,5 @@ if orientation:
 else:
     print('Test point is visible')
 
+
+visualize_configuration(screen=screen, observer=observer, point=test_point)
