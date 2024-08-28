@@ -5,8 +5,16 @@ observer = np.zeros(3)
 screen = np.array([[1, 0, 0],
                    [0, 1, 0],
                    [0, 0, 1]], dtype=float)
+#screen = np.array([[1, 0, 0],
+#                   [0, 1, 0],
+#                   [3, 2, 0]], dtype=float)
 #test_point = np.array([-1, -1, -1], dtype=float)
 test_point = np.array([10, 10, 10], dtype=float)
+
+# Check if the screen is a valid triangle
+gram_matrix = np.dot(screen, screen.T)
+if np.abs(np.linalg.det(gram_matrix)) < 1e-12:
+    raise Exception('Screen is not a valid triangle')
 
 # Determine the boundary of the screen 
 # shadow as an intersection of the 
